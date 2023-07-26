@@ -40,10 +40,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- DJI SDK -->
-
         <uses-library android:name="com.android.future.usb.accessory" />
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
+        <!-- DJI SDK -->
 
         <meta-data
             android:name="com.dji.sdk.API_KEY"
@@ -55,7 +55,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <service android:name="dji.sdk.sdkmanager.DJIGlobalService"></service>
+        <service android:name="dji.sdk.sdkmanager.DJIGlobalService" />
 
         <!-- DJI SDK -->
 
@@ -66,20 +66,12 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
-                android:resource="@xml/accessory_filter" />
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Waypoint1Activity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Waypoint2Activity"
             android:screenOrientation="portrait" />
